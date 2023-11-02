@@ -123,6 +123,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &317931939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317931942}
+  - component: {fileID: 317931941}
+  - component: {fileID: 317931940}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &317931940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317931939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &317931941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317931939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &317931942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317931939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487669705
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +372,7 @@ GameObject:
   - component: {fileID: 1476294433}
   - component: {fileID: 1476294432}
   - component: {fileID: 1476294431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Game Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,6 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567192703}
   - component: {fileID: 1567192702}
+  - component: {fileID: 1567192704}
   m_Layer: 0
   m_Name: Scripts Handler
   m_TagString: Untagged
@@ -460,8 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f876d6ba3244d408ae7aa16db83c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 4080052654114233492, guid: 2584ab22bd9f73a47a240b11936098b8, type: 3}
-  main_tank: {fileID: 3275212683477344792, guid: bffe7dcda0b520d4b8b62d469cbb7b05, type: 3}
+  tank: {fileID: 3275212683477344792, guid: 4860f8f5b49cbb04f8cdbd7a2a2d33a3, type: 3}
 --- !u!4 &1567192703
 Transform:
   m_ObjectHideFlags: 0
@@ -477,3 +545,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567192704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567192701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f124a0bafde2374da0d93af7f52aff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Main_tank_1: {fileID: 0}
+  Main_tank_2: {fileID: 0}
+  Enemy_tank_1: {fileID: 0}
+  Enemy_tank_2: {fileID: 0}
+  Bullet: {fileID: 0}
+  Brick_wall: {fileID: 0}
+  Bullet_prefab: {fileID: 2870071206845139974, guid: b3a4b7336b5fb0c4f9fad3c1d587b4fb, type: 3}
+  Main_tank_prefab: {fileID: 3275212683477344792, guid: 4860f8f5b49cbb04f8cdbd7a2a2d33a3, type: 3}

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3275212683477344795}
   - component: {fileID: 3275212683477344788}
   - component: {fileID: 2615621779530199768}
-  - component: {fileID: -7493147019027494215}
-  m_Layer: 0
+  - component: {fileID: 6107258490937220709}
+  - component: {fileID: 4984960014886041692}
+  m_Layer: 6
   m_Name: Main Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +144,28 @@ MonoBehaviour:
   anim_sprites:
   - {fileID: 1712829158, guid: 2a2f059877dbd5e4589c2f2a23e46310, type: 3}
   - {fileID: -985826574, guid: 2a2f059877dbd5e4589c2f2a23e46310, type: 3}
---- !u!114 &-7493147019027494215
+--- !u!50 &6107258490937220709
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275212683477344792}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &4984960014886041692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

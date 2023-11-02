@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ComputerInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Tank tank;
+
+    private void Awake()
     {
-        
+        tank = GetComponent<Tank>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

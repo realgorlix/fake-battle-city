@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteAnimation : MonoBehaviour
@@ -12,6 +10,7 @@ public class SpriteAnimation : MonoBehaviour
     private void Awake()
     {
         sprite_renderer = GetComponent<SpriteRenderer>();
+        sprite_renderer.sprite = anim_sprites[0];
         anim_max = anim_sprites.Length;
     }
 

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HumanInput : MonoBehaviour
@@ -39,6 +37,6 @@ public class HumanInput : MonoBehaviour
                 break;
             }
         }
-        tank.Shoot = Input.GetButton("Fire");
+        tank.Shoot = Input.GetKey(KeyCode.Space);
     }
 }
