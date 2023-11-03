@@ -14,10 +14,7 @@ public class HumanInput : MonoBehaviour
         new Vector2(0,1), new Vector2(-1,0), new Vector2(0,-1), new Vector2(1,0)
     };
 
-    private void Awake()
-    {
-        tank = GetComponent<Tank>();
-    }
+    private void Awake() => tank = GetComponent<Tank>();
 
     private void Update()
     {

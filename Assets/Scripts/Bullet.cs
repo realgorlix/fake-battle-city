@@ -4,9 +4,9 @@ public class Bullet : MonoBehaviour
 {
     private Vector3 direction;
 
-	private readonly Vector3 bullet_explosion_area = new Vector2(0.75f, 0.05f);
+	private readonly Vector3 bullet_explosion_area = new Vector2(0.75f, 0.025f);
     private const float speed = 8f;
-	private const int tank_layer = 6, destructible_wall_layer = 8;
+	private const int tank_layer = 6, destructible_wall_layer = 8, nexus_layer = 10;
 
 	private void Awake()
 	{
@@ -36,16 +36,21 @@ public class Bullet : MonoBehaviour
 				Collider2D[] to_delete = Physics2D.OverlapBoxAll(deleter_position,
                     bullet_explosion_area, direction.x*90);
 
-				foreach(Collider2D t in to_delete)
+				foreach(Collider2D mortal in to_delete)
 				{
-					if (t.gameObject.layer != destructible_wall_layer)
+					if (mortal.gameObject.layer != destructible_wall_layer)
 						continue;
 
-					wall.Break_Wall_Piece(t.gameObject.GetComponent<SpriteRenderer>());
+					wall.Break_Wall_Piece(mortal.gameObject.GetComponent<SpriteRenderer>());
 				}
 
                 break;
-		}
+			case nexus_layer:
+
+                collided_with.GetComponent<Nexus>().Register_hit();
+
+                break;
+        }
 		Destroy(gameObject);
 	}
 }

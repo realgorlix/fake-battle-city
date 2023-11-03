@@ -32,6 +32,12 @@ public class SpriteAnimation : MonoBehaviour
         }
     }
 
+    public void Set_frame(int frame)
+    {
+        if(!Loop)
+            sprite_renderer.sprite = anim_sprites[frame];
+    }
+
     private void Animation_Step()
     {
         int sequence = anim_step = (anim_step + 1) % anim_max;

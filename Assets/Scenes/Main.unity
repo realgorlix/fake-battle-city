@@ -567,6 +567,9 @@ MonoBehaviour:
   Main_tank_prefab: {fileID: 3275212683477344792, guid: 4860f8f5b49cbb04f8cdbd7a2a2d33a3, type: 3}
   Brick_wall_prefab: {fileID: 5131949498301696291, guid: 73793c5ade59cd74db3ccc2d2429506d, type: 3}
   Indestructible_wall_prefab: {fileID: 5131949498301696291, guid: 3584e79d5e90e214a88880556273e529, type: 3}
+  Nexus_wall_prefab: {fileID: 2409766550930168791, guid: c71578f699113b3458631bb63cbfa7ee, type: 3}
+  Nexus_prefab: {fileID: 4647637755671533091, guid: cf87e7ba6cf615649980f9e70ec5c465, type: 3}
+  Enemy_tank_prefab: {fileID: 3275212683477344792, guid: 7a75f5df651a4d84e81a074effc5d328, type: 3}
 --- !u!114 &1567192705
 MonoBehaviour:
   m_ObjectHideFlags: 0
