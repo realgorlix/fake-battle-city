@@ -8,6 +8,4 @@ public class ComputerInput : MonoBehaviour
     {
         tank = GetComponent<Tank>();
     }
-
-
 }

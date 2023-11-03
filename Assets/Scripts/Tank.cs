@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
     [HideInInspector] public Vector2 Move;
     [HideInInspector] public bool Shoot;
+
+    [HideInInspector] public event Action Died;
 
     private SpriteAnimation sprite_animation;
     private Rigidbody2D rb;
@@ -19,19 +22,23 @@ public class Tank : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Move.magnitude > 0f)
         {
             bool direction_changed = Move != tank_forward;
             if (direction_changed)
             {
-                RoundTankPosition();
+                Round_Tank_Position();
                 tank_forward = Move;
             }
             transform.rotation = 
                 Quaternion.Euler(0,0, Vector2.SignedAngle(Vector2.up, tank_forward));
-            sprite_animation.Animation_Step();
+            sprite_animation.Loop = true;
+        }
+        else
+        {
+            sprite_animation.Loop = false;
         }
         rb.velocity = (Vector3)Move * speed;
         if(Shoot && bullet == null)
@@ -41,15 +48,21 @@ public class Tank : MonoBehaviour
     private void Fire()
     {
         bullet = Instantiate(GameResources.Instance.Bullet_prefab,
-            transform.position + (Vector3)(tank_forward),
+            transform.position + (Vector3)(tank_forward * 0.75f),
             Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, tank_forward))).GetComponent<Bullet>();
     }
 
-    private void RoundTankPosition()
+    private void Round_Tank_Position()
     {
         Vector3 rounded_position = transform.position * 10f;
         rounded_position.x = Mathf.Round(rounded_position.x / 5f) * 5f;
         rounded_position.y = Mathf.Round(rounded_position.y / 5f) * 5f;
         transform.position = rounded_position / 10f;
+    }
+
+    public void Kill()
+    {
+        Died?.Invoke();
+        Destroy(gameObject);
     }
 }

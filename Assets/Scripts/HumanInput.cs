@@ -4,6 +4,7 @@ public class HumanInput : MonoBehaviour
 {
     private Tank tank;
     private KeyCode last_pressed;
+    private const KeyCode shoot_key = KeyCode.Space;
     private readonly KeyCode[] movement_keys =
     {
         KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D
@@ -37,6 +38,6 @@ public class HumanInput : MonoBehaviour
                 break;
             }
         }
-        tank.Shoot = Input.GetKey(KeyCode.Space);
+        tank.Shoot = Input.GetKeyDown(shoot_key);
     }
 }

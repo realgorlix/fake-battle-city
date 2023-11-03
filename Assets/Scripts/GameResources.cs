@@ -16,7 +16,7 @@ public class GameResources : MonoBehaviour
         Bullet,
         Brick_wall;
 
-    public GameObject Bullet_prefab, Main_tank_prefab;
+    public GameObject Bullet_prefab, Main_tank_prefab, Brick_wall_prefab, Indestructible_wall_prefab;
 
     private void Awake()
     {
