@@ -5,8 +5,9 @@ public class Tank : MonoBehaviour
 {
     [HideInInspector] public Vector2 Move;
     [HideInInspector] public bool Shoot;
+    [HideInInspector] public event Action<Tank> Died;
 
-    [HideInInspector] public event Action Died;
+    public int Side = 0;
 
     private SpriteAnimation sprite_animation;
     private Rigidbody2D rb;
@@ -48,8 +49,10 @@ public class Tank : MonoBehaviour
     private void Fire()
     {
         bullet = Instantiate(GameResources.Instance.Bullet_prefab,
-            transform.position + (Vector3)(tank_forward * 0.75f),
-            Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, tank_forward))).GetComponent<Bullet>();
+            transform.position + (Vector3)(tank_forward * 0.25f),
+            Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, tank_forward)))
+            .GetComponent<Bullet>();
+        bullet.Owner = this;
     }
 
     private void Round_Tank_Position()
@@ -62,7 +65,7 @@ public class Tank : MonoBehaviour
 
     public void Kill()
     {
-        Died?.Invoke();
+        Died?.Invoke(this);
         Destroy(gameObject);
     }
 }

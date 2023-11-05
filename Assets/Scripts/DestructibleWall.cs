@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DestructibleWall : MonoBehaviour
 {
+    public Map Map;
+
     private SpriteRenderer[,] spriteRenderers = new SpriteRenderer[4,4];
 
     private void Awake()
@@ -28,11 +30,22 @@ public class DestructibleWall : MonoBehaviour
     {
         piece.color = Color.black;
         piece.gameObject.GetComponent<Collider2D>().enabled = false;
+        Destroyed_check();
     }
 
-    public void Break_Wall_Piece(int x, int y)
+    private void Destroyed_check()
     {
-        spriteRenderers[x, y].color = Color.black;
-        spriteRenderers[x, y].gameObject.GetComponent<Collider2D>().enabled = false;
+        for (int x = 0; x < 4; x++)
+        {
+            for (int y = 0; y < 4; y++)
+            {
+                if (spriteRenderers[x,y].gameObject.GetComponent<Collider2D>().enabled)
+                    return;
+            }
+        }
+        Vector3 position = transform.position;
+        int pos_x = Mathf.RoundToInt(position.x), pos_y = Mathf.RoundToInt(position.y);
+        if(Map is not null)
+            Map.fill_grid[pos_x, pos_y] = 1;
     }
 }

@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Move: {x: 0, y: 0}
   Shoot: 0
+  Side: 1
 --- !u!61 &3275212683477344788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3275212683477344792}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9a2d1334bcb0f4241a94de427c64f840, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -179,4 +180,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f5d9ed882746c40a9a8092aeeff329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Map: {fileID: 0}
   Game: {fileID: 0}

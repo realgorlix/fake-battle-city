@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+	public Tank Owner;
+
     private Vector3 direction;
 
 	private readonly Vector3 bullet_explosion_area = new Vector2(0.75f, 0.025f);
     private const float speed = 8f;
-	private const int tank_layer = 6, destructible_wall_layer = 8, nexus_layer = 10;
+	private const int 
+		tank_layer = 6, 
+		destructible_wall_layer = 8, 
+		nexus_layer = 10;
 
-	private void Awake()
+	private void Start()
 	{
 		direction = transform.up;
 		GetComponent<Rigidbody2D>().velocity = direction * speed;
+		Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), Owner.GetComponent<BoxCollider2D>());
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -21,7 +27,9 @@ public class Bullet : MonoBehaviour
 		{
 			case tank_layer:
 
-				collided_with.GetComponent<Tank>().Kill();
+				Tank collided_with_tank = collided_with.GetComponent<Tank>();
+				if (collided_with_tank.Side != Owner.Side)
+					collided_with_tank.Kill();
 
                 break;
 			case destructible_wall_layer:

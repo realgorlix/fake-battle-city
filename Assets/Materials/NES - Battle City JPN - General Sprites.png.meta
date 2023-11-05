@@ -401,7 +401,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,7 +422,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,6 +430,48 @@ TextureImporter:
       bones: []
       spriteID: 1047acb846917094e847116e098e2520
       internalID: -1214265329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameover
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 57
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4c550e363bf194181ad5f5159e5d2f
+      internalID: -1601052154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kill_effect
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 85
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4573dc80c8a562148a80c87c0c8c5ada
+      internalID: -744271040
       vertices: []
       indices: 
       edges: []
@@ -452,7 +494,9 @@ TextureImporter:
       bullet_particle_3: 1653674515
       enemy_tank_1: -1450666129
       enemy_tank_2: -1214265329
+      gameover: -1601052154
       indestructible_wall: 1142851769
+      kill_effect: -744271040
       main_tank_1: 1712829158
       main_tank_2: -985826574
       nexus: 978885474
